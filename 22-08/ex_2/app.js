@@ -1,0 +1,11 @@
+const Carro = require("./Carro");
+const Carro_1 = new Carro("Ferrari", 2000, 200);
+Carro_1.acelerar();
+Carro_1.acelerar();
+Carro_1.acelerar();
+Carro_1.frear();
+const Carro_2 = new Carro("Uno", 2004, 3000);
+Carro_2.acelerar();
+Carro_2.acelerar();
+Carro_2.acelerar();
+Carro_2.frear();
