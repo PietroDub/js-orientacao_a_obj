@@ -1,5 +1,5 @@
 class ContaBancaria{
-    #_saldo;
+    #_saldo = 0; // começa em zero
 
     depositar(valor){
        this.#_saldo += valor;
@@ -13,7 +13,6 @@ class ContaBancaria{
 
     verSaldo(){
         console.log(`Seu saldo é: ${this.#_saldo}`)
-        console.log(this.#_saldo)
     }
 
     Number(parametro){
