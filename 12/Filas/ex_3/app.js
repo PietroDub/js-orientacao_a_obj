@@ -2,6 +2,9 @@ const Brinquedo = require("./Brinquedo");
 
 const brinquedo1 = new Brinquedo();
 
-brinquedo1.embarque('Juninho');
-brinquedo1.embarque('gabs');
+async function embarcando(pessoa) {
+    brinquedo1.embarque(pessoa);
+}
+setTimeout(embarcando, 2000, 'Anna');
+setTimeout(embarcando, 4000, 'Pedro');
 brinquedo1.desembarque();

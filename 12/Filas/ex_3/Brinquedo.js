@@ -3,7 +3,7 @@ class Brinquedo{
     #inicio = 0;
     #fim = 0;
 
-    embarque(pessoa){
+    embarque(pessoa, vip){
         this.#fila[this.#fim] = pessoa;
         console.log(`${pessoa} entrou na fila!`);
         this.#fim++;
