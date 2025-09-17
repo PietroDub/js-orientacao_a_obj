@@ -3,7 +3,7 @@ class Caixa{
     #inicio = 0;
     #fim = 0;
     
-    entrar(pessoa, quantidade){
+    entrar(pessoa){
         this.#fila[this.#fim] = pessoa;
         this.#fim++;
         return this.#fila[this.#fim];
@@ -13,6 +13,9 @@ class Caixa{
         delete this.#fila[this.#inicio];
         this.#inicio++;
         return atendeu;
+    }
+    vazia() {
+        return this.#fila.length === 0;
     }
 }
 
