@@ -1,3 +1,4 @@
+
 class Node {
     constructor(value){
         this.value = value;
@@ -6,3 +7,5 @@ class Node {
         this.next = undefined;
     }
 }
+
+module.exports = Node;

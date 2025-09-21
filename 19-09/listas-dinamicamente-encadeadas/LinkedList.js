@@ -1,3 +1,5 @@
+const Node = require("./Node");
+
 class LinkedList {
     #head = undefined;
     #length = 0;
@@ -112,3 +114,5 @@ class LinkedList {
         console.log(list + 'undefined');
     }
 }
+
+module.exports = LinkedList;
