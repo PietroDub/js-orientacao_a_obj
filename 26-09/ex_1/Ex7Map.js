@@ -1,21 +1,38 @@
-class Converte{
+class Converte {
 
-    ObjToMap(obj){
-        Object.entries(obj)
+    // Object -> Map
+    ObjToMap(obj) {
         const mapa = new Map();
-        
+        for (const chave in obj) {
+            mapa.set(chave, obj[chave]);
+        }
+        return mapa;
     }
 
-    mapToObj(mapa){
-        mapa = {
-            
+    // Map -> Object
+    mapToObj(mapa) {
+        const obj = {};
+        for (const [chave, valor] of mapa) {
+            obj[chave] = valor;
         }
+        return obj;
     }
 }
 
-const conversor = new Converte();
-const mapa = new Map();
-mapa.set("nome", "carlos");
-mapa.set("numero", 42);
+// Testando
+const obj = {
+    nome: "carlos",
+    numero: 42
+};
 
-conversor.mapToObj(mapa);
+const conversor = new Converte();
+
+// Convertendo Object -> Map
+const mapa = conversor.ObjToMap(obj);
+console.log(mapa);  
+// Map(2) { 'nome' => 'carlos', 'numero' => 42 }
+
+// Convertendo Map -> Object
+const objDeNovo = conversor.mapToObj(mapa);
+console.log(objDeNovo);  
+// { nome: 'carlos', numero: 42 }
