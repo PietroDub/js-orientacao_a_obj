@@ -29,8 +29,8 @@ const funcionarios = [
     new Estagiario("João", 1500)
 ];
 
-function mostrarBonus(funcionarios) {
-    for (let f of funcionarios) {
+function mostrarBonus(funcionari) {
+    for (let f of funcionari) {
         console.log(`${f.nome} - Bônus: R$${f.calcularBonus()}`);
     }
 }
@@ -38,8 +38,25 @@ function mostrarBonus(funcionarios) {
 mostrarBonus(funcionarios);
 
 const Matematica = require("./Exercicio5");
+const Pilha = require("./Exercicio6");
+const LinkedList = require("./Exercicio7");
 console.log(Matematica.somar(10, 50));
 console.log(Matematica.subtrair(100, 50));
 console.log(Matematica.dividir(100, 20));
 console.log(Matematica.multiplicar(10, 4));
 
+
+const pilha1 = new Pilha();
+pilha1.adicionar("Arroz");
+pilha1.adicionar("Sorvete");
+pilha1.adicionar(null);
+console.log(pilha1.remover());
+console.log(pilha1.top());
+pilha1.isEmpty();
+
+const lista = new LinkedList();
+lista.InsertAtEnd("Arroz");
+lista.InsertAtEnd("Arcane");
+lista.InsertAtEnd("Star Wars");
+
+lista.ToString();
