@@ -60,3 +60,19 @@ lista.InsertAtEnd("Arcane");
 lista.InsertAtEnd("Star Wars");
 
 lista.ToString();
+
+const Fila = require("./Exercicio9")
+const fila = new Fila();
+
+fila.enqueue("Cliente 1");
+fila.enqueue("Cliente 2");
+fila.enqueue("Cliente 3");
+
+console.log("Próximo:", fila.front()); 
+// Saída: Próximo: Cliente 1
+
+console.log("Atendido:", fila.dequeue()); 
+// Saída: Atendido: Cliente 1
+
+console.log("Próximo:", fila.front()); 
+// Saída: Próximo: Cliente 2
