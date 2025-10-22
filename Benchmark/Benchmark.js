@@ -1,10 +1,10 @@
 
 // Importando as classes necessárias para o benchmark
-const BinaryTree = require('./BinaryTree.js');
-const LinkedList = require('../Aula 06 - LinkedList/LinkedList.js');
-const DoublyLinkedList = require('../Aula 07 - DoubleLinkedList/DoublyLinkedList.js');
-const Fila = require('../Aula 05 - Filas/Fila.js');
-const Pilha = require('../Aula 04 - Pilhas/Pilha.js');
+const BinaryTree = require('./bynarytree.js');
+const LinkedList = require('./linked_list.js');
+const DoublyLinkedList = require('./doubly_linked_list.js');
+const Fila = require('./fila.js');
+const Pilha = require('./plha.js');
 
 
 // Instanciando as classes
