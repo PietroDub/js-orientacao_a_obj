@@ -8,7 +8,7 @@ class Node{
 
 class BinaryTree{
     constructor(){
-        
+        this.root = null;
     }
 
     insert(value){
@@ -61,7 +61,11 @@ class BinaryTree{
     }
 
     search(value){
-        return this._searchNode(this.root, value);
+        if(value){
+            return this._searchNode(this.root, value);
+        } else {
+            console.log("não encontrado!");
+        }
     }
 
     _searchNode(node, value){
@@ -117,6 +121,35 @@ class BinaryTree{
         node = node.left;
        } return node;
     }
+
+    _findMin(node = this.root) {
+    if (node === null) {
+        return null;
+    }
+    while (node.left !== null) {
+        node = node.left;
+    }
+    return node.value;
+}
+
+findMax(node = this.root) {
+    if (node === null) {
+        return null;
+    }
+    while (node.right !== null) {
+        node = node.right;
+    }
+    return node.value;
+}
+
+countNodes(node = this.root) {
+    if (node === null) return 0; // caso base
+    return 1 + this.countNodes(node.left) + this.countNodes(node.right);
+}
+
+isEmpty(node = this.root){
+    return this.root === null ? true : false;
+}
 
 }
 module.exports = BinaryTree;

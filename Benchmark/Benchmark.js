@@ -1,13 +1,17 @@
 
 // Importando as classes necessárias para o benchmark
+const Meuarray = require('./array.js');
 const BinaryTree = require('./bynarytree.js');
 const LinkedList = require('./linked_list.js');
 const DoublyLinkedList = require('./doubly_linked_list.js');
 const Fila = require('./fila.js');
 const Pilha = require('./plha.js');
+const Avl = require('./AVL_bynarytree.js');
 
 
 // Instanciando as classes
+const avl = new Avl();
+const arras = new Meuarray();
 const tree = new BinaryTree();
 const list = new LinkedList();
 const doublyList = new DoublyLinkedList();
@@ -24,6 +28,18 @@ function getRandomIntRange(min, max) {
 // Tamanho do teste
 const size = 10000000;
 
+console.time("timerAVL")
+for(let i = 0; i < size; i++){
+    avl._insert(getRandomIntRange(i, size));
+}
+console.timeEnd("timerAVL")
+
+console.time("timerArray")
+for(let i = 0; i < size; i++){
+    arras.adicionar(getRandomIntRange(i, size));
+}
+console.timeEnd("timerArray")
+
 // Testando a Fila
 console.time("timerFila");
 for (let i = 0; i < size; i++) 
@@ -31,7 +47,6 @@ for (let i = 0; i < size; i++)
     queue.enqueue(getRandomIntRange(i, size));
 }
 console.timeEnd("timerFila");
-
 
 // Testando a Pilha
 console.time("timerPilha");
@@ -41,13 +56,11 @@ for (let i = 0; i < size; i++)
 }
 console.timeEnd("timerPilha");
 
-
-
 // Testando a LinkedList
 console.time("timerLinkedList");
 for (let i = 0; i < size; i++) 
 {
-    list.insertAtBeginning(getRandomIntRange(i, size));
+    list.insertAtBeggining(getRandomIntRange(i, size));
 }
 console.timeEnd("timerLinkedList");
 

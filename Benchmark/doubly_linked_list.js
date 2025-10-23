@@ -12,6 +12,22 @@ class DoublyLinkedList {
     constructor() {
         this.head = null;
         this.tail = null;
+        this.lenght = 0;
+    }
+
+    //adicionar ao final
+    append(value) {
+        const newNode = new Node(value);
+
+        if(this.head == undefined){
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            this.tail.next = newNode;
+            newNode.prev = this.tail;
+            this.tail = newNode;
+        }
+        this.lenght++;
     }
 
     // Inserir no fim
@@ -98,24 +114,4 @@ class DoublyLinkedList {
 
 }
 
-// --------------------------------------------------
-// Testando a lista
-const lista = new DoublyLinkedList();
-
-lista.insertAtEnd(10);
-lista.insertAtEnd(20);
-lista.insertAtEnd(30);
-
-console.log("Percorrendo do início ao fim:");
-lista.printForward();   // 10 <-> 20 <-> 30 <-> null
-
-console.log("Percorrendo do fim ao início:");
-lista.printBackward();  // 30 <-> 20 <-> 10 <-> null
-
-lista.insertAtBeginning(5);
-lista.printForward();   // 5 <-> 10 <-> 20 <-> 30 <-> null
-
-console.log("Removido do início:", lista.removeFromBeginning()); // 5
-console.log("Removido do fim:", lista.removeFromEnd());          // 30
-
-lista.printForward();   // 10 <-> 20 <-> null
+module.exports = DoublyLinkedList;

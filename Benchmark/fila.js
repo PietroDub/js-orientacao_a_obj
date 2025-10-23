@@ -6,7 +6,7 @@ class Fila{
     enqueue(cliente){
         this.#clientes[this.#fim] = cliente;
         this.#fim++;
-        console.log(`Cliente ${cliente} adicionado!`);
+        // console.log(`Cliente ${cliente} adicionado!`);
     }
     dequeue(){
         const atendido = this.#clientes[this.#incio];
