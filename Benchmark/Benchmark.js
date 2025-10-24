@@ -81,3 +81,50 @@ for (let i = 0; i < size; i++)
     tree.insert(getRandomIntRange(i, size));
 }
 console.timeEnd("timerBinaryTree");
+
+// PESQUISANDO
+
+// ====== TESTE DE BUSCA ======
+const lastValue = size - 1
+
+console.time("timerSearchAVL");
+for (let i = 0; i < size; i++) {
+    avl.search(lastValue);
+}
+console.timeEnd("timerSearchAVL");
+
+console.time("timerSearchArray");
+for (let i = 0; i < size; i++) {
+    arras.obterElemento(lastValue); // ou .search() / .find() dependendo da sua classe
+}
+console.timeEnd("timerSearchArray");
+
+console.time("timerSearchFila");
+for (let i = 0; i < size; i++) {
+    queue.back(lastValue);
+}
+console.timeEnd("timerSearchFila");
+
+console.time("timerSearchPilha");
+for (let i = 0; i < size; i++) {
+    stack.search(lastValue);
+}
+console.timeEnd("timerSearchPilha");
+
+console.time("timerSearchLinkedList");
+for (let i = 0; i < size; i++) {
+    list.find(lastValue);
+}
+console.timeEnd("timerSearchLinkedList");
+
+console.time("timerSearchDoublyLinkedList");
+for (let i = 0; i < size; i++) {
+    doublyList.find(lastValue);
+}
+console.timeEnd("timerSearchDoublyLinkedList");
+
+console.time("timerSearchBinaryTree");
+for (let i = 0; i < size; i++) {
+    tree.search(lastValue);
+}
+console.timeEnd("timerSearchBinaryTree");

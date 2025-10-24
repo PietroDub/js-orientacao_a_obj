@@ -20,6 +20,15 @@ class Pilha{
     verificar(){
         console.table(this.#elementos);
     }
+
+    search(valor){
+         for (let i = this.#tamanho - 1; i >= 0; i--) {
+        if (this.#elementos[i] === valor) {
+            return this.#elementos[i]; // valor encontrado
+        }
+    }
+    return null; // não encontrado
+    }
 }
 
 module.exports = Pilha;

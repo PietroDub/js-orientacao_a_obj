@@ -3,17 +3,33 @@ class Fila{
     #incio = 0;
     #fim = 0;
 
-    enqueue(cliente){
-        this.#clientes[this.#fim] = cliente;
-        this.#fim++;
-        // console.log(`Cliente ${cliente} adicionado!`);
+   enqueue(cliente) {
+    this.#clientes.push(cliente);
+}
+
+dequeue() {
+    const atendido = this.#clientes.shift();
+    console.log(`Cliente ${atendido} atendido`);
+    return atendido;
+}
+
+search(valor) {
+    return this.#clientes.includes(valor);
+}
+
+ back() {
+    // Se a fila estiver vazia, retorna undefined
+    if (this.estaVazia()) {
+      return undefined;
     }
-    dequeue(){
-        const atendido = this.#clientes[this.#incio];
-        delete this.#clientes[this.#incio];
-        this.#incio++;
-        console.log(`Cliente ${atendido} atendido`);
-    }
+
+    // Retorna o primeiro elemento
+    return this.#clientes[this.#fim];
+  }
+
+   // Verifica se a fila está vazia
+  // Verifica se os índices estão iguais com arrow function
+  estaVazia = () => this.#fim === this.#incio;
 
 }
 module.exports = Fila;

@@ -112,6 +112,22 @@ class DoublyLinkedList {
         console.log(result + "null");
     }
 
+      // Encontrar o índice de um valor específico
+  find(value) {
+    let current = this.head;
+    let index = 0;
+
+    while (current) {
+      if (current.value === value) return index; // Valor encontrado
+
+      current = current.next;
+      index++;
+    }
+
+    return -1; // Valor não encontrado
+  }
+
+
 }
 
 module.exports = DoublyLinkedList;

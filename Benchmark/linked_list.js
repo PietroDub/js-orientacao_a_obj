@@ -19,6 +19,18 @@ class linked_list{
         }
         console.log(list + 'undefined');
     }
+
+    find(value){
+        let current = this.#head;
+
+        while(current !== undefined){
+            if(current.value === value) {
+                return current;
+            }
+            current = current.next;
+        }
+        return undefined;
+    }
 };
 
 module.exports = linked_list;

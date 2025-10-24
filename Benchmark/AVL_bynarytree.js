@@ -33,6 +33,23 @@ class AVLTree {
         return x;
     }
 
+    _searchNode(node, value){
+        if(node === null){
+          return false;
+        }
+        if (value === node.value) {
+            return true;
+        } else if (value < node.value) {
+            return this._searchNode(node.left, value);
+        } else { 
+            return this._searchNode(node.right, value);
+        }
+    }
+
+    search(value){
+        return this._searchNode(this.root, value);
+    }
+
     rotateLeft(x) {
         const y = x.right;
         const T2 = y.left;
